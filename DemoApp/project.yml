@@ -1,0 +1,38 @@
+name: NavigationKitDemo
+
+options:
+  bundleIdPrefix: dev.psouza
+  minimumXcodeGenVersion: 2.42.0
+  generateEmptyDirectories: true
+  deploymentTarget:
+    iOS: "15.0"
+
+packages:
+  NavigationKit:
+    path: ..
+
+settings:
+  IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+  MARKETING_VERSION: "0.1.0"
+  CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  NavigationKitDemo:
+    type: application
+    supportedDestinations: [iOS]
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: NavigationKitDemo
+    dependencies:
+      - package: NavigationKit
+        product: NavigationKitCore
+      - package: NavigationKit
+        product: NavigationKit
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "dev.psouza.NavigationKitDemo"
+      INFOPLIST_FILE: NavigationKitDemo/Info.plist
+      TARGETED_DEVICE_FAMILY: 1
+
+base:
+  SWIFT_VERSION: "5.9"
